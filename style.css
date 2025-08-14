@@ -1,0 +1,142 @@
+:root {
+  --pr-color: #fff;
+  --second-color: #131313;
+  --cubicbz: cubic-bezier(.9,0,.1,1);
+}
+
+/* General */
+* {
+  box-sizing:border-box;
+  margin:0; padding:0;
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+}
+body {
+  background:linear-gradient(0deg, rgb(19,19,19) 9%, rgb(31,12,12) 42%, rgba(71,28,31,1) 70%, rgba(24,22,40,1) 99%);
+  color:var(--pr-color);
+}
+
+/* Nav */
+nav {
+  position:fixed; top:0; width:100%; display:flex; justify-content:space-between; z-index:2;
+}
+.nav__logo a, .nav__items-link a {
+  color:#babac3; text-decoration:none;
+}
+.nav__logo a { font-size:24px; text-transform:uppercase; }
+.nav__items { display:flex; }
+.nav__items-link { padding:40px; }
+.nav__items-link a { font-size:14px; font-weight:400; }
+.nav__items-link.active a { text-decoration:underline; }
+
+/* Header */
+.header {
+  position:relative;
+  display:flex; justify-content:center; align-items:center;
+  height:100vh; padding:0 70px;
+}
+.title {
+  font-size:95px; color:#babac3; text-align:center;
+  text-transform:uppercase; mix-blend-mode:difference; z-index:2;
+}
+.title_paralax, .stroke { display:inline-block; }
+.header__img {
+  position:absolute; top:0; right:100px;
+  width:45%; height:100%; overflow:hidden;
+}
+.header__img img { width:100%; height:100%; object-fit:cover; }
+.header__marq { position:absolute; bottom:0; width:100%; background:#020102; overflow:hidden; }
+.header__marq-wrapp { display:flex; padding:8px 70px; }
+.header__marq-txt {
+  flex:0 0 auto; position:relative;
+  padding-right:55px; margin-right:15px;
+  text-transform:uppercase; color:#23385C; font-size:35px;
+}
+.header__marq-star { position:absolute; width:40px; height:40px; right:0; }
+.header__marq-star img { width:100%; height:100%; }
+
+/* Section general styling */
+section { padding:150px 0 50px; }
+.content { padding:0 70px; margin:auto; width:100%; }
+
+/* Titles */
+.section-title {
+  font-size:70px; text-transform:uppercase;
+  color:#e6c9c9; text-align:center;
+  margin-bottom:60px; position:relative;
+}
+.section-title .stroke { color:transparent; -webkit-text-stroke:1px #c29c9c; }
+.section-title__square {
+  position:absolute; width:130px; height:130px;
+  border:2px solid #9d8484; top:50%; left:50%;
+  transform:translate(-50%,-50%); z-index:-1;
+}
+
+/* About */
+.about__wrapp { display:flex; justify-content:space-between; }
+.about__txt, .about__img { width:calc(50% - 35px); }
+.about__txt { padding-right:70px; }
+.about__p {
+  font-size:20px; font-weight:300;
+  color:#9d8484; line-height:1.4;
+}
+.about__img { height:100vh; overflow:hidden; }
+.about__img img { width:100%; height:100%; object-fit:cover; }
+
+/* Projects links */
+.proj__list .proj__item {
+  position:relative; padding:40px 0;
+  border-bottom:1px solid #9d8484;
+}
+.proj__item-arrow { position:absolute; top:50%; right:0;
+  width:55px; height:55px; transform:translateY(-50%);
+}
+.proj__item-arrow img {
+  width:100%; height:100%; object-fit:contain;
+  transform:rotate(180deg);
+}
+.proj__item-txt {
+  font-size:50px; color:#9d8484;
+  text-transform:uppercase;
+}
+
+/* Work Grid */
+.work__wrapp {
+  display:flex; flex-wrap:wrap;
+  row-gap:120px; justify-content:space-between;
+  padding:0 120px;
+}
+.work__item {
+  position:relative; width:calc(50% - 60px);
+  height:100vh; overflow:hidden;
+}
+.work__item-num {
+  position:absolute; top:20px; left:20px;
+  font-size:70px; color:var(--pr-color);
+  mix-blend-mode:difference; z-index:2;
+}
+.work__item-img img {
+  width:100%; height:100%; object-fit:cover;
+}
+
+/* Footer */
+.footer {
+  display:flex; align-items:center; justify-content:center;
+  height:100vh;
+}
+.footer__div {
+  font-size:70px; letter-spacing:15px;
+  color:#babac3; text-transform:uppercase;
+}
+.footer__div span { display:inline-block; }
+
+/* Responsive */
+@media(max-width:900px){
+  .about__wrapp { flex-direction:column; }
+  .about__txt, .about__img { width:100%; padding-right:0; }
+  .header__img { display:none; }
+  .section-title { font-size:50px; }
+  .proj__item-txt { font-size:36px; }
+  .work__item { width:100%; height:auto; }
+  .work__item-num { font-size:50px; }
+}
